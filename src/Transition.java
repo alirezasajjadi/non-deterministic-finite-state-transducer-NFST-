@@ -1,2 +1,2 @@
-package PACKAGE_NAME;public class Transition {
+public class Transition {
 }

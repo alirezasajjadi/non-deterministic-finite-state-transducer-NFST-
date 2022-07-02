@@ -76,24 +76,30 @@ public class MorphologicalGeneration {
         fst.addTransition("q8", 'e', 'e', "q14");
 
         ArrayList<String> outs = new ArrayList<>();
-
+        ArrayList<String> temp = new ArrayList<>();
         try {
-            File file = new File("C:\\Users\\dell\\Desktop\\university\\term 4\\language theory\\project 2\\non-deterministic FST\\src\\test.txt");    //creates a new file instance
-            FileReader fr = new FileReader(file);   //reads the file
-            BufferedReader br = new BufferedReader(fr);  //creates a buffering character input stream
+            File file = new File("src\\test.txt");
+            FileReader fr = new FileReader(file);
+            BufferedReader br = new BufferedReader(fr);
             String line;
             while ((line = br.readLine()) != null) {
-                outs = fst.parse_input(line);
+                temp.clear();
+                temp = fst.parse_input(line);
+                if (!temp.isEmpty())
+                    outs.add(temp.get(0));
+                else
+                    outs.add("FAIL");
             }
-            fr.close();    //closes the stream and release the resources
+            fr.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
 
-        for (String s:
-             outs) {
-            System.out.println(s);
-        }
+        if (!outs.isEmpty())
+            for (String s :
+                    outs) {
+                System.out.println(s);
+            }
 
     }
 }

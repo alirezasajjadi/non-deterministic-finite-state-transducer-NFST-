@@ -1,5 +1,4 @@
 public class Transition {
-//    private State currentState;
     private char input;
     private char output;
     private State nextState;
@@ -9,10 +8,6 @@ public class Transition {
         setOutput(output);
         setNextState(nextState);
     }
-
-//    public void setCurrentState(State currentState) {
-//        this.currentState = currentState;
-//    }
 
     public void setInput(char input) {
         this.input = input;
@@ -25,10 +20,6 @@ public class Transition {
     public void setNextState(State nextState) {
         this.nextState = nextState;
     }
-
-//    public State getCurrentState() {
-//        return currentState;
-//    }
 
     public char getInput() {
         return input;

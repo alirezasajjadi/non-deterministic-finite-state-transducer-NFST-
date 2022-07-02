@@ -1,15 +1,19 @@
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 public class State {
-    String name;
-    boolean isFinal;
-    ArrayList<Transition> transitions = null;
-
+    private String name;
+    private boolean isFinal;
+    private ArrayList<Transition> transitions = null;
+//    private HashMap<Character, List<Transition>> transitions = null;
     public State(String state_name, boolean is_final) {
         setName(state_name);
         setFinal(is_final);
         this.transitions = new ArrayList<Transition>();
+//        this.transitions = new HashMap<>();
     }
+
 
     public void setName(String name) {
         this.name = name;
@@ -30,4 +34,8 @@ public class State {
     public ArrayList<Transition> getTransitions() {
         return transitions;
     }
+
+//    public HashMap<Character, List<Transition>> getTransitions() {
+//        return transitions;
+//    }
 }
